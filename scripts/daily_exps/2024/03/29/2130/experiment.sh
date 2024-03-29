@@ -9,5 +9,6 @@ do
     for LR in ${LRS}
     do
         sbatch ./scripts/daily_exps/2024/03/29/2130/deit_small_patch16_224_finetune_slurm.sh ${DEVICES} ${DATASET} ${LR}
+        sleep 5
     done
 done

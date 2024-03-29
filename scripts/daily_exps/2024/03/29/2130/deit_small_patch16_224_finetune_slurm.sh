@@ -74,10 +74,7 @@ docker run -itd --gpus ${GPULIST} --name ${DOCKER_NAME} --ipc=host \
 
 # script 실행
 
-for ((i=${START_EPOCH}; i<=${END_EPOCH}; i++))
-do
-    docker exec ${DOCKER_NAME} bash -c "cd /NAS/JW/deit && bash ./scripts/deit_small_patch16_224_${DATASET_ALIAS}_finetune.sh ${GPUS} ${LR}"
-done
+docker exec ${DOCKER_NAME} bash -c "cd /NAS/JW/deit && bash ./scripts/deit_small_patch16_224_${DATASET_ALIAS}_finetune.sh ${GPUS} ${LR}"
 
 #####################################
 
